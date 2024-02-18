@@ -1,0 +1,69 @@
+[
+    // fully vim-like ctrl+p and ctrl+n
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen",
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+    },
+    {
+        "key": "ctrl+p",
+        "command": "extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active",
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile",
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+    },
+    {
+        "key": "ctrl+n",
+        "command": "extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active",
+    },
+
+    // toggle "telescope" (ctrl+t)
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols",
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-extension.vim_ctrl+t",
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.quickOpen",
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickOpen",
+    },
+
+    // disable vim's ctrl+b
+    {
+        "key": "ctrl+b",
+        "command": "-extension.vim_ctrl+b",
+    },
+
+    // ctrl+space to accept autocompletes from copilot
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+    },
+    {
+        "key": "ctrl+space",
+        "command": "editor.action.inlineSuggest.commit",
+    },
+]
+
