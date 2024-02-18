@@ -53,7 +53,7 @@ stow kp
 
 # network
 sudo apt install -y openvpn wireshark
-stow ovpn && cd
+cd
 
 # antivirus
 sudo apt install -y clamav lynis
