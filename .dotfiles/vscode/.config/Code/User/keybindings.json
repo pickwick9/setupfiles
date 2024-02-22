@@ -55,15 +55,5 @@
         "key": "ctrl+b",
         "command": "-extension.vim_ctrl+b",
     },
-
-    // ctrl+space to accept autocompletes from copilot
-    {
-        "key": "tab",
-        "command": "-editor.action.inlineSuggest.commit",
-    },
-    {
-        "key": "ctrl+space",
-        "command": "editor.action.inlineSuggest.commit",
-    },
 ]
 
