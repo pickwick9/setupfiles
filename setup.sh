@@ -10,11 +10,11 @@ sudo apt install python3-pip
 curl https://pyenv.run | bash
 pip3 install pipenv
 
-# c/c++
-sudo apt install -y build-essential clang clangd cmake gcc ninja-build pkg-config
-
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# c/c++
+sudo apt install -y build-essential clang clangd cmake gcc ninja-build pkg-config
 
 # some tools
 sudo apt install -y gdb git-all make valgrind
@@ -23,9 +23,12 @@ sudo apt install -y gdb git-all make valgrind
 
 # IDEs
 sudo apt install -y neovim vim
-wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/vscode.deb
-sudo apt install ~/vscode.deb
-rm ~/vscode.deb
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+sudo apt update && sudo apt install codium
 
 # command-line enhancements
 sudo apt install -y fzf tmux zsh
@@ -41,22 +44,22 @@ sudo apt install -y libpthread-stubs0-dev thermald xclip
 
 ################################################################
 
-# .dotfiles
+# settings/config 
 sudo apt install -y stow
-mv ~/setupfiles/.dotfiles ~/.dotfiles
-cd ~/.dotfiles && stow ovpn && stow ssh && stow tmux && stow vscode && stow zsh
-rm -rf ~/setupfiles
-
-# password manger 
-sudo apt install -y keepassxc
-stow kp
-
-# network
-sudo apt install -y openvpn wireshark
+cd ~/setupfiles/.dotfiles
+stow -t ~ tmux
+stow -t ~ vscodium
+stow -t ~ zsh
 cd
 
-# antivirus
-sudo apt install -y clamav lynis
+# private
+sudo apt install -y keepassxc openvpn
+cp ~/setupfiles/.dotfiles/kp/.kp.kdbx ~
+cp ~/setupfiles/.dotfiles/ovpn/.allen.ovpn ~
+cp -r ~/setupfiles/.dotfiles/ssh/.ssh ~
+
+# security
+sudo apt install -y clamav lynis wireshark
 
 ################################################################
 
@@ -89,7 +92,7 @@ sudo apt install -y ansible
 
 # misc 
 sudo apt install -y ffmpeg gimp pavucontrol qbittorrent vlc
-curl -fsSL https://ollama.com/install.sh | sh
+pip install yt-dlp spotdl
 
 ################################################################
 

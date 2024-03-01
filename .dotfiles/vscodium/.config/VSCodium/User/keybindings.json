@@ -1,5 +1,4 @@
 [
-    // fully vim-like ctrl+p and ctrl+n
     {
         "key": "ctrl+p",
         "command": "-workbench.action.quickOpen",
@@ -31,7 +30,6 @@
         "when": "editorTextFocus && vim.active",
     },
 
-    // toggle "telescope" (ctrl+t)
     {
         "key": "ctrl+t",
         "command": "-workbench.action.showAllSymbols",
@@ -50,7 +48,6 @@
         "when": "inQuickOpen",
     },
 
-    // disable vim's ctrl+b
     {
         "key": "ctrl+b",
         "command": "-extension.vim_ctrl+b",
