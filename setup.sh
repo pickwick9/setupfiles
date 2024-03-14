@@ -10,11 +10,11 @@ sudo apt install python3-pip
 curl https://pyenv.run | bash
 pip3 install pipenv
 
-# rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
 # c/c++
 sudo apt install -y build-essential clang clangd cmake gcc ninja-build pkg-config
+
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # some tools
 sudo apt install -y gdb git-all make valgrind
@@ -83,6 +83,11 @@ sudo usermod -aG libvirt-qemu $USER
 sudo usermod -aG kvm $USER
 sudo usermod -aG input $USER
 sudo usermod -aG disk $USER
+
+# remmina
+sudo apt install -y flatpak
+flatpak install flathub org.remmina.Remmina
+
 
 ################################################################
 
