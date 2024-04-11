@@ -24,12 +24,17 @@ echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https:/
     | sudo tee /etc/apt/sources.list.d/vscodium.list
 sudo apt update && sudo apt install codium
 
+
+################################################################
+
 # system tools
 sudo apt install -y cpu-checker dmidecode gparted htop moreutils neofetch psensor strace
 # & enhancements
 sudo apt install -y libpthread-stubs0-dev thermald xclip
 
-################################################################
+# GNOME tweaks
+sudo add-apt-repository universe
+sudo apt install gnome-tweaks
 
 # settings/config 
 sudo apt install -y stow
@@ -50,12 +55,12 @@ sudo apt install -y clamav lynis wireshark
 
 ################################################################
 
-# android
-sudo apt install -y adb android-sdk-platform-tools-common
-
 # ansible
 sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install -y ansible
+
+# android
+sudo apt install -y adb android-sdk-platform-tools-common
 
 # misc 
 sudo apt install -y ffmpeg gimp pavucontrol qbittorrent vlc
