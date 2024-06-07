@@ -1,4 +1,5 @@
 [
+    // vim
     {
         "key": "ctrl+p",
         "command": "-workbench.action.quickOpen",
@@ -30,6 +31,7 @@
         "when": "editorTextFocus && vim.active",
     },
 
+    // fuzzy search files
     {
         "key": "ctrl+t",
         "command": "-workbench.action.showAllSymbols",
@@ -52,5 +54,39 @@
         "key": "ctrl+b",
         "command": "-extension.vim_ctrl+b",
     },
-]
 
+    // copilot
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+    },
+    {
+        "key": "ctrl+space",
+        "command": "editor.action.inlineSuggest.commit",
+    },
+
+    // suggestions and suggestion docs
+    {
+        "key": "ctrl+s",
+        "command": "-workbench.actions.files.save",
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-toggleSuggestionDetails",
+    },
+    {
+        "key": "ctrl+s",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorTextFocus",
+    },
+    {
+        "key": "ctrl+s",
+        "command": "toggleSuggestionDetails",
+        "when": "editorTextFocus && suggestWidgetVisible",
+    },
+
+]

@@ -1,18 +1,30 @@
 {
+    // telemetry & data sharing
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "telemetry.telemetryLevel": "off",
     "extensions.ignoreRecommendations": true,
     "workbench.settings.enableNaturalLanguageSearch": false,
 
+    // vim
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "line",
     "vim.useSystemClipboard": true,
 
+    // personal preferences
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
     "terminal.integrated.sendKeybindingsToShell": true,
     "workbench.startupEditor": "none",
     "workbench.age.walkthroughs.openOnInstall": false,
-    "git.openRepositoryInParentFolders": "never",
+
+    // dart
+    "[dart]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "Dart-Code.dart-code",
+        "editor.inlayHints.enabled": "offUnlessPressed"
+    },
 }
